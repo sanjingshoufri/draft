@@ -1,0 +1,19 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+	        "Test\\": "class/",
+	        "Functiontest\\": "func/"
+        },
+        "files":[
+        	"func/common.php",
+        	"vendor/xhprof/xhprof_lib/utils/xhprof_lib.php",
+        	"vendor/xhprof/xhprof_lib/utils/xhprof_runs.php"
+        ]
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.14"
+    }
+}
