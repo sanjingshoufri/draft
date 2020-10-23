@@ -1,26 +1,10 @@
 <?php
-// function gen()
-// {
-// 	for ($i = 0; $i < 2; $i++) { 
-// 		$a = yield;
-// 		echo $a . "<br>";
-// 	}
-// }
+use Classcore\Scheduler;
 
-// $iterator = gen();
-// $iterator->send("hello world");
-// $iterator->send("taonian");
+$scheduler = new Scheduler();
 
-function gen() {
-    yield 'foo';
-    yield 'bar';
-}
+$task1 = task1();
+$scheduler->newTask($task1);
+$scheduler->newTask(task2());
 
-$gen = gen();
-// var_dump($gen->send('something'));
-
-$queue = new SplQueue();
-$queue->enqueue("taonian");
-
-$ret = $queue->dequeue();
-var_dump($ret);
+$scheduler->run();

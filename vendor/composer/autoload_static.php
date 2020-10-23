@@ -87,10 +87,6 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-        'T' => 
-        array (
-            'Test\\' => 5,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -112,7 +108,7 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         ),
         'F' => 
         array (
-            'Functiontest\\' => 13,
+            'Functioncore\\' => 13,
         ),
         'D' => 
         array (
@@ -122,6 +118,7 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         'C' => 
         array (
             'Complex\\' => 8,
+            'Classcore\\' => 10,
         ),
     );
 
@@ -139,10 +136,6 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Test\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/class',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -185,7 +178,7 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
-        'Functiontest\\' => 
+        'Functioncore\\' => 
         array (
             0 => __DIR__ . '/../..' . '/func',
         ),
@@ -200,6 +193,10 @@ class ComposerStaticInitfa65709ad5e6451e90a675111b056a3d
         'Complex\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
+        ),
+        'Classcore\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/class',
         ),
     );
 

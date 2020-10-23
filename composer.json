@@ -4,8 +4,8 @@
     },
     "autoload": {
         "psr-4": {
-	        "Test\\": "class/",
-	        "Functiontest\\": "func/"
+	        "Classcore\\": "class/",
+	        "Functioncore\\": "func/"
         },
         "files":[
         	"func/common.php",
