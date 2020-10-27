@@ -1,10 +1,7 @@
 <?php
-use Classcore\Scheduler;
+// 
+$arrObject = new ArrayObject();
+// print_r($arrObject);
 
-$scheduler = new Scheduler();
-
-$task1 = task1();
-$scheduler->newTask($task1);
-$scheduler->newTask(task2());
-
-$scheduler->run();
+$arrObject = ArrayObject::append("taonian");
+var_dump($arrObject);

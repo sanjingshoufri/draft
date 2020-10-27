@@ -31,5 +31,5 @@ foreach ($urlList as $key => $url) {
     $video_url = $arr['item_list'][0]['video']['play_addr']['url_list'][0];
     $file_content = file_get_contents($video_url);
 
-    file_put_contents($base_url . "/qk221111l" . $key . '.mp4', $file_content);
+    file_put_contents($base_url . "/" . $key . '.mp4', $file_content);
 }
