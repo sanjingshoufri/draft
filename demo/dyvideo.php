@@ -4,18 +4,13 @@
  * $share_url为抖音分享链接
  */ 
 
-$share_url = "TANNER:
-姨妈痛到吐我没哭 定闹钟抢裙子没抢到我没哭 你跟别人说我是你前任我哭了 我丢不起这个人  https://v.douyin.com/Jm3PtqF/ 复制此链接，打开抖音，直接观看视频！
-
-TANNER:
-  https://v.douyin.com/Jm3vV3W/ 复制此链接，打开抖音，直接观看视频！
-"; 
+$share_url = ""; 
 
 // 从字符串中提取url.
 preg_match_all("/(https:\/\/)[a-z.\/0-9A-Z]+/", $share_url, $match);
 $urlList = $match[0];
 
-$base_url = "E:/taonian";
+$base_url = "F:/taonian";
 $dy_api = "https://www.iesdouyin.com/web/api/v2/aweme/iteminfo/?item_ids=";
 
 // 批量下载

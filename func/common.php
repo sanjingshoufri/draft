@@ -1,20 +1,4 @@
 <?php
-function task1() 
-{
-    for ($i = 1; $i <= 10; ++$i) {
-        echo "This is task 1 iteration $i.\n";
-        yield;
-    }
-}
-
-function task2() 
-{
-    for ($i = 1; $i <= 5; ++$i) {
-        echo "This is task 2 iteration $i.\n";
-        yield;
-    }
-}
-
 if (!function_exists('curlRequest')) {
     function curlRequest($url, $post = '', $header = 0, $cookie = '', $returnCookie = 0)
     {
@@ -60,21 +44,23 @@ if (!function_exists('curlRequest')) {
     }
 }
 
-function getRealUrl($url)
-{
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    // 不需要页面内容
-    curl_setopt($ch, CURLOPT_NOBODY, 1);
-    // 不直接输出
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    // 返回最后的Location
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_exec($ch);
-    $info = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL);
-    curl_close($ch);
+if (!function_exists('getRealUrl')) {
+    function getRealUrl($url)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        // 不需要页面内容
+        curl_setopt($ch, CURLOPT_NOBODY, 1);
+        // 不直接输出
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // 返回最后的Location
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_exec($ch);
+        $info = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL);
+        curl_close($ch);
 
-    return $info;
+        return $info;
+    }
 }
 
 /**
@@ -82,8 +68,22 @@ function getRealUrl($url)
  * @param $showname 显示下载的视频名称
  * @return int|string
  */
-function download_file($file, $showname)
-{
-    // 读取文件内容，然后写入到本地
-         
+if (!function_exists('download_file')) {
+    function download_file($download_file_url, $suffix, $local_file_name)
+    {
+        // 读取文件内容，然后写入到本地
+        $file_content = file_get_contents($download_file_url);
+        if (!$file_content) {
+            return FALSE;
+        }
+
+        // 写入内容到磁盘
+        $file_name_base = md5($local_file_name) . mt_rand() . time();
+        $file_name = LOCAL_STORE_ADDR . "/" . $file_name_base . '.' . $suffix;
+
+        $has_written = file_put_contents($file_name, $file_content);
+        if (!$has_written) {
+            return FALSE;
+        }
+    }
 }
