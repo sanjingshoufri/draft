@@ -40,6 +40,14 @@ for ($i = 1; $i <= $page_num; $i++) {
 	}
 }
 
+// 采集失败，二次采集
+foreach ($fail_photo_url as $photo_url) {
+    $download_bool = download_file($photo_url, 'jpg', uniqid());
+    if (!$download_bool) {
+    	$fail_photo_url[] = $photo_url;
+    }
+}
+
 // 展示采集结果
 if (empty($fail_photo_url)) {
 	exit("采集完成");
